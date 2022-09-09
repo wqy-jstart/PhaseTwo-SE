@@ -33,13 +33,13 @@ public class Test2 {
             Class cls = Class.forName(packName+"."+className);//拼接成完全限定名
             System.out.println("正在实例化："+cls.getName());
             Object obj = cls.newInstance();//实例化该类
-            Method[] methods = cls.getDeclaredMethods();
+            Method[] methods = cls.getDeclaredMethods();//获取包括私有在内的所有方法
             for (Method method : methods){
                 if (method.getParameterCount()==0 &&
                     method.getModifiers()== Modifier.PUBLIC
                 ){
                     System.out.println("调用方法："+method.getName()+"()");
-                    method.invoke(obj);
+                    method.invoke(obj);//执行该类中符合条件的方法
                 }
             }
         }

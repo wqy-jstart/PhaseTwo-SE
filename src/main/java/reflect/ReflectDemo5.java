@@ -12,6 +12,7 @@ public class ReflectDemo5 {
         p.say("大家好！");
         p.say("我真的栓Q",5);
 
+        //使用反射机制
         Class cls = Class.forName("reflect.Person");
         Object obj = cls.newInstance();//相当于实例化对象Person p = new Person();
         //say(String)

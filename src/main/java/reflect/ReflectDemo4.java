@@ -12,14 +12,15 @@ public class ReflectDemo4 {
         Person p = new Person();
         p.dance();
 
+        //使用反射机制
         //1)实例化
         Class cls = Class.forName("reflect.Person");
         Object obj = cls.newInstance();//相当于实例化Person obj = new Person();
         //2)调用方法
         //2.1通过类对象获取要调用方法的方法对象(Method对象)
-        Method method = cls.getMethod("dance");//dance方法
+        Method method = cls.getMethod("dance");//获取dance方法对象
         //2.2通过方法对象来调用该方法
-        method.invoke(obj);//等同于p.dance();
+        method.invoke(obj);//等同于调用p.dance();
 
         //测试代码
         Scanner scanner = new Scanner(System.in);
