@@ -2,6 +2,10 @@ package reflect;
 
 import reflect.annotations.AutoRunClass;
 
+/**
+ * 判断类是否被标注
+ * isAnnotationPresent(AutoRunClass.class)该方法返回boolean类型
+ */
 public class ReflectDemo7 {
     public static void main(String[] args) throws Exception {
         Class cls = Class.forName("reflect.Person");//先加载传入完全限定名的类

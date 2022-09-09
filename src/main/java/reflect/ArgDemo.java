@@ -25,6 +25,7 @@ public class ArgDemo {
     }
     public static void dosome(int a,String... s){
         System.out.println(s.length);//0 1 2 10
-        System.out.println(Arrays.toString(s));//[] [a] [a, b] [a, b, b, b, b, b, b, b, b, b]
+        System.out.println(Arrays.toString(s));
+        //[] [a] [a, b] [a, b, b, b, b, b, b, b, b, b]
     }
 }
