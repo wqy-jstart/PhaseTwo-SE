@@ -1,5 +1,8 @@
 package reflect;
 
+import reflect.annotations.AutoRunClass;
+
+@AutoRunClass
 public class Student {
     public void study(){
         System.out.println("学生:good good study!day day up!");
