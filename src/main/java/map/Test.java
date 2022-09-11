@@ -17,7 +17,7 @@ public class Test {
     public static void main(String[] args) {
         String line = "Thinking in java! i love java!";
         Map<Character,Integer> map = new HashMap<>();//定义一个Map
-        for (int i = 0; i < line.length(); i++) {//遍历字符串中的元素
+        for (int i = 0; i < line.length(); i++) {//遍历字符串中的每个字符元素
 //            三目运算:
 //            char c = line.charAt(i);
 //            int num = map.containsKey(c)?map.get(c)+1:1;

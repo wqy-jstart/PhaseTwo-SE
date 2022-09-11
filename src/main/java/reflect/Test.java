@@ -18,7 +18,7 @@ public class Test {
         Object obj = cls.newInstance();//实例化该类对象
         Method[] methods = cls.getDeclaredMethods();//获取所有被类定义的方法(包括私有)
         for (Method method : methods){//遍历所有公开方法
-            //int  getParameterCount()该方法用来返回方法参数的个数
+            //int  getParameterCount()★该方法用来返回方法参数的个数
             if (method.getParameterCount()==0 &&
                 method.getModifiers()== Modifier.PUBLIC//返回公开方法
 //                method.getModifiers()==Modifier.PRIVATE//返回私有方法

@@ -14,6 +14,7 @@ import java.util.Map;
 public class MapDemo {
     public static void main(String[] args) {
         Map<String,Integer> map = new HashMap<>();
+        System.out.println(map);//{}
         /*
             V put(K k,V v)
             将一组键值对存入Map中。
@@ -24,7 +25,7 @@ public class MapDemo {
         //如果Map的value是一个包装类类型,获取时不要用基本类型接收避免因为自动拆箱导致空指针
         //int value = map.put("语文",98).intValue();
         Integer value = map.put("语文",98);
-        System.out.println(value);//null
+        System.out.println(value);//被替换的值null
         map.put("语文",98);
         map.put("数学",97);
         map.put("英语",96);

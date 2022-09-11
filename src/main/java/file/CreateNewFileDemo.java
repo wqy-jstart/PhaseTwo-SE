@@ -23,7 +23,5 @@ public class CreateNewFileDemo {
             file.createNewFile();//alt+enter(回车) 选第一项add exception....
             System.out.println("文件已创建！");
         }
-
-
     }
 }

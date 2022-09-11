@@ -29,7 +29,5 @@ public class Test {
                 System.out.println(sub.getName());
             }
         }
-
-
     }
 }

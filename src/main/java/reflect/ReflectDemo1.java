@@ -46,9 +46,9 @@ public class ReflectDemo1 {
         Class cls = Class.forName(className);//加载该类,用Class实例来接收
         System.out.println(cls);//class java.lang.String
 
-        //获取类对象表示的类完全限定名getName()
+        //获取类对象表示的类的完全限定名getName()
         String name = cls.getName();//通过cls引用打点获取类完全限定名
-        System.out.println("类对象的完全限定名"+name);//java.lang.String
+        System.out.println("类对象的完全限定名："+name);//java.lang.String
 
         //仅获取类名getSimpleName()
         name = cls.getSimpleName();
