@@ -8,6 +8,7 @@ package thread;
 public class SleepDemo2 {
     public static void main(String[] args) {
         //建立完对象后处于新建状态,直到启动start()方法
+        //匿名内部类写法(不需要另外再创建一个类来重写接口中的方法)
         Thread lin = new Thread("林永健"){
             @Override
             public void run() {
@@ -20,6 +21,8 @@ public class SleepDemo2 {
                 System.out.println(getName()+":醒了");
             }
         };
+        //建立完对象后处于新建状态,直到启动start()方法
+        //匿名内部类写法(不需要另外再创建一个类来重写接口中的方法)
         Thread huang = new Thread("黄大锤"){
             @Override
             public void run() {

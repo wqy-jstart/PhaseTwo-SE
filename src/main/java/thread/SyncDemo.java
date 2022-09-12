@@ -9,6 +9,7 @@ public class SyncDemo {
     public static void main(String[] args) {
         Table table = new Table();
         //创建两个线程,执行一个方法任务
+        //匿名内部类写法(不需要另外再创建一个类来重写接口中的方法)
         Thread t1 = new Thread("李华") {
             @Override
             public void run() {

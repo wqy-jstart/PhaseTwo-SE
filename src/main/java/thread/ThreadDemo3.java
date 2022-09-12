@@ -5,21 +5,23 @@ package thread;
  */
 public class ThreadDemo3 {
     public static void main(String[] args) {
-        //继承Thread重写run方法----匿名内部类写法
+        //继承Thread重写run方法-----合并写法
         //利用匿名内部类重写普通类中的方法时,可选择性重写
-        Thread t1 = new Thread(() -> {
-            for (int i = 0; i < 1000; i++) {
-                System.out.println("你是谁呀！");
-            }
-        });
-
-        //实现Runnable接口重写run方法----匿名内部类写法(不需要另外再创建一个类来重写接口中的方法)
+       Thread t1 = new Thread(new Runnable() {
+           @Override
+           public void run() {
+               for (int i = 0; i < 1000; i++) {
+                   System.out.println("查水表的！"+i);
+               }
+           }
+       });
+        //实现Runnable接口重写run方法----合并写法
         //利用匿名内部类重写接口中的方法时必须全部重写
         Runnable r2 = new Runnable() {
             @Override
             public void run() {
                 for (int i = 0; i < 1000; i++) {
-                    System.out.println("查水表的！");
+                    System.out.println("查水表的！"+i);
                 }
             }
         };
