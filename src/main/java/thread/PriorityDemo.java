@@ -36,8 +36,8 @@ public class PriorityDemo {
         };
         //Thread.MIN_PRIORITY返回int值
         //setPriority()返回为void,设置优先级,里面返回一个优先级最大值
-        min.setPriority(Thread.MIN_PRIORITY);//最高优先级10
-        max.setPriority(Thread.MAX_PRIORITY);//最低优先级1
+        min.setPriority(Thread.MAX_PRIORITY);//最高优先级10
+        max.setPriority(Thread.MIN_PRIORITY);//最低优先级1
         //norm优先级为默认值5
         min.start();
         norm.start();

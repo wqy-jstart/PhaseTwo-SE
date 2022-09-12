@@ -1,14 +1,15 @@
 package thread;
 /**
  * 多线程并发安全问题
- * 当多个线程并发操作同一临界资源由于线程切换时机不确定，导致执行顺序出现混乱从而导致不良后果
+ * 当多个线程并发操作同一临界资源由于线程切换时机不确定，
+ * 导致执行顺序出现混乱从而导致不良后果，严重时可能导致系统瘫痪。
  * 临界资源:操作该资源的完成过程同一时刻只能被单一线程进行的。
  */
 public class SyncDemo {
     public static void main(String[] args) {
         Table table = new Table();
         //创建两个线程,执行一个方法任务
-        Thread t1 = new Thread() {
+        Thread t1 = new Thread("李华") {
             @Override
             public void run() {
                 while (true) {
@@ -18,16 +19,24 @@ public class SyncDemo {
                 }
             }
         };
-        Thread t2 = new Thread() {
+        Thread t2 = new Thread("小明") {
             @Override
             public void run() {
                 while (true) {
                     int bean = table.getBeans();
+                     /*
+                        static void yield()
+                        线程提供的这个静态方法作用是让执行该方法的线程
+                        主动放弃本次时间片。
+                        这里使用它的目的是模拟执行到这里CPU没有时间了，发生
+                        线程切换，来看并发安全问题的产生。
+                     */
                     Thread.yield();
-                    System.out.println(getName() + ":" + bean);
+                    System.out.println(getName()+":"+bean);
                 }
             }
         };
+        //启动两个线程
         t1.start();
         t2.start();
     }

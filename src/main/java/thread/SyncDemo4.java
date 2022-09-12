@@ -3,19 +3,19 @@ package thread;
 /**
  * 互斥锁
  * 当使用多个synchronized锁定多个代码片段,并且指定的同步监视器对象是同一个时,那么
- * 这些代码片段直接就是互斥，多个线程不能同时执行它们
+ * 这些代码片段直接就是互斥------★多个线程不能同时执行它们
  */
 public class SyncDemo4 {
     public static void main(String[] args) {
         Boo boo = new Boo();
         //若不加synchronized关键字,则两个线程互不打扰分别执行
-        Thread t1 = new Thread(){
+        Thread t1 = new Thread("A"){
             @Override
             public void run() {
                 boo.methodA();
             }
         };
-        Thread t2 = new Thread(){
+        Thread t2 = new Thread("B"){
             @Override
             public void run() {
                 boo.methodB();

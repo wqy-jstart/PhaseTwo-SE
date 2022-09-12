@@ -15,7 +15,7 @@ public class ThreadDemo {
         Thread t2 = new MyThread2();
         t.start();//就绪状态,等待JVM中线程调度器的调度
         t2.start();
-        //当获取到CPU资源时就可以执行run(),随着进入运行状态
+        //当获取到CPU资源时就可以执行run()方法,随着进入运行状态
 
     }
 }

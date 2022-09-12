@@ -12,7 +12,7 @@ package thread;
 public class SyncDemo2 {
     public static void main(String[] args) {
         Shop shop = new Shop();
- //若创建两个对象,synchronized (this)中的对象不一样,没有并发安全问题,可以同时执行
+//若创建两个对象,synchronized (this)中的对象不一样,没有并发安全问题,可以同时执行
 //       Shop shop2 = new Shop();
         //创建两个线程,执行一个方法任务
         Thread t1 = new Thread("范传奇"){
@@ -34,14 +34,18 @@ public class SyncDemo2 {
 class Shop{
     //synchronized关键字使两个线程顺序执行该方法
     public void buy(){
+        /*
+            在方法上使用synchronized，那么同步监视器对象就是this。
+         */
+//    public synchronized void buy(){
+        Thread t = Thread.currentThread();//获取运行该方法的线程
         try {
-            Thread t = Thread.currentThread();
             System.out.println(t.getName()+":正在挑衣服...");
             Thread.sleep(5000);
             /*
               同步块使用时要指定同步监视器对象,该对象的选取要同时满足：
-              1：必须是一个引用类型的实例
-              2：多个需要同步执行该代码片段的线程看到该
+              1：这个对象可以是java中任何引用类型的实例，只要保证多个需要排队
+              2：执行该同步块中代码的线程看到的该对象是"同一个"即可
              */
             //synchronized (new Object()){
             //不可以,不满足第二个条件,执行代码的线程不一定看到的是同一个锁对象
@@ -52,7 +56,7 @@ class Shop{
                这会导致多个线程执行不同的shop的buy方法时(没有并发安全问题时)
                也要求同时执行,这会降低效率
              */
-            synchronized (this){
+            synchronized (this){//根据两个线程指向的对象来判断是否互斥
                 System.out.println(t.getName()+":正在试衣服...");
                 Thread.sleep(5000);
             }

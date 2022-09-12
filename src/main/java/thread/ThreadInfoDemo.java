@@ -10,18 +10,18 @@ public class ThreadInfoDemo {
         System.out.println("名字："+name);//main
 
         long id = main.getId();//获取唯一标识
-        System.out.println("唯一标识："+id);
+        System.out.println("唯一标识："+id);//1
 
-        int priority = main.getPriority();//获取优先级
-        System.out.println("优先级："+priority);
+        int priority = main.getPriority();//获取线程优先级
+        System.out.println("优先级："+priority);//5
 
         boolean isAlive = main.isAlive();//是否活着？
-        System.out.println("是否活着："+isAlive);
+        System.out.println("是否活着："+isAlive);//true
 
         boolean isDaemon = main.isDaemon();//是否为守护线程？
-        System.out.println("是否为守护线程："+isDaemon);
+        System.out.println("是否为守护线程："+isDaemon);//false
 
         Boolean isInterrupted = main.isInterrupted();//是否被中断？
-        System.out.println("是否被中断了："+isInterrupted);
+        System.out.println("是否被中断了："+isInterrupted);//false
     }
 }

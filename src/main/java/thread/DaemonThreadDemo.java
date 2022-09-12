@@ -11,7 +11,8 @@ package thread;
  */
 public class DaemonThreadDemo {
     public static void main(String[] args) {//main方法为main主线程(普通线程)
-        Thread rose = new Thread(){//创建一个线程,进入新建状态,等待引用调用start()方法
+        //创建一个线程(★可传递一个字符串),进入新建状态,等待引用调用start()方法
+        Thread rose = new Thread(){
             @Override
             public void run() {
                 for (int i = 0; i < 5; i++) {
