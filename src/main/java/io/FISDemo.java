@@ -61,7 +61,7 @@ public class FISDemo {
             读取到的数据存在低8位上,高24位2进制全部补0
          */
         d = fis.read(); //读取第三个字节(文件只有2个字节,因此第三次读取已经是文件末尾)
-        System.out.println(d); //-1
+        System.out.println(d); //默认值为-1
         fis.close(); //用完关闭输入流
     }
 }

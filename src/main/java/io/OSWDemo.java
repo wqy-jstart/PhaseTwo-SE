@@ -21,7 +21,7 @@ public class OSWDemo {
         //向文件osw.txt中写入文本数据-------转成UTF-8的格式
         FileOutputStream fos = new FileOutputStream("osw.txt");
         /*
-            创建转换流时通常要明确字符集(不指定会使用系统默认的,这可能导致跨平台问题)
+            创建转换流写字符时通常要明确字符集(不指定会使用系统默认的,这可能导致跨平台问题)
          */
         OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
         /*
@@ -33,7 +33,7 @@ public class OSWDemo {
         osw.write("如果你突然打了个喷嚏,啊,那一定是我在想你.");
         osw.write("如果半夜被手机吵醒,啊,那一定是我关心.");
 
-        System.out.println("写出完毕");
+        System.out.println("写出完毕!");
         osw.close();//关闭转换输出字节流(字符->字节)
     }
 }

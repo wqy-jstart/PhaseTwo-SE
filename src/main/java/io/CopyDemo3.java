@@ -29,7 +29,7 @@ public class CopyDemo3 {
         long start = System.currentTimeMillis();
         //缓冲流内部默认以8kb为单位进行读写操作,小于8kb先载入缓冲区
         //若载入缓冲区,不添加任何方法的情况下不达到8kb是不读出的
-        while ((d = bis.read())!=-1) {
+        while ((d = bis.read())!=-1) { //用BufferedInputStream来读
             bos.write(d);
         }
         long end = System.currentTimeMillis();

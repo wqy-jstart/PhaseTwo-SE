@@ -39,7 +39,7 @@ public class FOSDemo {
            fos.dat文件中内容
            00000001
          */
-        fos.write(1);//向文件中写入第一个字节
+        fos.write(1);//向文件中写入一个字节
         /*                            vvvvvvvv
            00000000 00000000 00000000 00000101
            fos.dat内容
@@ -47,6 +47,6 @@ public class FOSDemo {
          */
         fos.write(5);//向文件中写入第二个字节
         System.out.println("写出完毕！");
-        fos.close(); //取消关闭输出流
+        fos.close(); //关闭字节输出流
     }
 }

@@ -20,7 +20,7 @@ public class ISRDemo {
         int d;
         long start = System.currentTimeMillis();
         while ((d = isr.read()) != -1){
-            System.out.print((char)d);
+            System.out.print((char)d);//print取消换行
         }
         long end = System.currentTimeMillis();
         System.out.println("读取完毕!耗时："+(end-start)+"ms");

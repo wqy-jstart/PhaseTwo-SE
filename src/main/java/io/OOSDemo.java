@@ -18,7 +18,7 @@ public class OOSDemo {
         String gender = "男";
         String[] otherInfo = {"技术好","技术超好","拍片儿技术好","大家技术的启蒙老师"};
         Person p = new Person(name,age,gender,otherInfo);
-        System.out.println(p);
+        System.out.println(p);//重写了toString()方法
         /*
             对象输出流提供了序列化对象的方法:
             void write(Object obj)
@@ -29,7 +29,7 @@ public class OOSDemo {
          */
         //创建一个文件流，传入文件地址
         FileOutputStream fos = new FileOutputStream("person.obj");
-        //创按对象流对象
+        //创建对象流对象
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(p);//引用写对象的方法，传入对象
         System.out.println("写出完毕！");//写到文件里
