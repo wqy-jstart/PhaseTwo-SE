@@ -5,7 +5,7 @@ public class TimeDemo {
         //UTC:世界协调时
         //long返回的是自1970年1月1日00:00:00到当前系统时间经过的毫秒值
         long now = System.currentTimeMillis();//到现在的时间ms
-        System.out.println(now);//输出现在的时间ms
+        System.out.println(now);//输出由1970年到现在的时间ms
         System.out.println(now/1000/60/60/24/365);//转化成年份
 
         long max = Long.MAX_VALUE;//用long的包装类Long来获取long的最大值
