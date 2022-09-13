@@ -1,6 +1,7 @@
 package reflect;
 
 import reflect.annotations.AutoRunClass;
+import reflect.annotations.AutoRunMethod;
 
 /**
  * 使用当前类测试反射机制
@@ -16,7 +17,7 @@ public class Person {
         this.name = name;
         this.age = age;
     }
-
+    @AutoRunMethod(5)
     public void sayHello(){
         System.out.println(name+":hello!");
     }
@@ -24,11 +25,11 @@ public class Person {
     public void sayHi(){
         System.out.println(name+":hi!");
     }
-
+    @AutoRunMethod()//@AutoRunMethod()那么value采取默认值
     public void dance(){
         System.out.println(name+"正在跳舞");
     }
-
+    @AutoRunMethod()//@AutoRunMethod()那么value依然采取默认值
     public void sing(){
         System.out.println(name+"正在唱歌");
     }

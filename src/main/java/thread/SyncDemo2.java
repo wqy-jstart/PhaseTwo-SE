@@ -11,7 +11,7 @@ package thread;
  */
 public class SyncDemo2 {
     public static void main(String[] args) {
-        Shop shop = new Shop();
+        Shop shop = new Shop();//两个线程指向一个对象使用synchronized (this)互斥
 //若创建两个对象,synchronized (this)中的对象不一样,没有并发安全问题,可以同时执行
 //       Shop shop2 = new Shop();
         //创建两个线程,执行一个方法任务
