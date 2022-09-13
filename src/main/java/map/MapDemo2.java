@@ -66,7 +66,15 @@ public class MapDemo2 {
         }
         System.out.println("==============================================");
 
-        //forEach方式：
+        //利用迭代器遍历
+        Iterator it = c.iterator();
+        while (it.hasNext()) {
+            String str = (String)it.next();
+            System.out.println(str);
+        }
+        System.out.println("===============================================");
+
+        //Collection集合的forEach方式遍历：
         c.forEach(
                 e-> System.out.println(e)
         );
