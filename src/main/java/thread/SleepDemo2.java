@@ -37,7 +37,8 @@ public class SleepDemo2 {
                 }
                 System.out.println("咣当！");
                 System.out.println(getName()+":大哥！搞定！");
-                lin.interrupt();//中断lin线程的睡眠阻塞
+                //★Thread中interrupt()方法负责中断lin线程的睡眠阻塞
+                lin.interrupt();
             }
         };
         lin.start();

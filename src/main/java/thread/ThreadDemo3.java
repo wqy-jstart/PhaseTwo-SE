@@ -5,7 +5,7 @@ package thread;
  */
 public class ThreadDemo3 {
     public static void main(String[] args) {
-        //继承Thread重写run方法-----合并写法
+        //继承Runnable重写run方法直接转入Thread实例中构成线程-----合并写法
         //利用匿名内部类重写普通类中的方法时,可选择性重写
        Thread t1 = new Thread(new Runnable() {
            @Override
@@ -15,8 +15,7 @@ public class ThreadDemo3 {
                }
            }
        });
-        //实现Runnable接口重写run方法----合并写法
-        //利用匿名内部类重写接口中的方法时必须全部重写
+        //利用Runnable匿名内部类重写接口中的方法时必须全部重写
         Runnable r2 = new Runnable() {
             @Override
             public void run() {

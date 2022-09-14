@@ -8,6 +8,7 @@ package thread;
  */
 public class PriorityDemo {
     public static void main(String[] args) {
+        //Thread的匿名内部类写法,重写run方法
         Thread min = new Thread("李华"){//可传递字符串
             @Override//重写
             public void run(){
@@ -17,27 +18,27 @@ public class PriorityDemo {
             }
         };
 
-        Thread norm = new Thread(){
+        Thread norm = new Thread("小明"){
             @Override//重写
             public void run() {
                 for (int i = 0; i < 10000; i++) {
-                    System.out.println("norm");
+                    System.out.println(getName()+"norm");
                 }
             }
         };
 
-        Thread max = new Thread(){
+        Thread max = new Thread("小张"){
             @Override//重写
             public void run() {
                 for (int i = 0; i < 10000; i++) {
-                    System.out.println("max");
+                    System.out.println(getName()+"max");
                 }
             }
         };
         //Thread.MIN_PRIORITY返回int值
         //setPriority()返回为void,设置优先级,里面返回一个优先级最大值
-        min.setPriority(Thread.MAX_PRIORITY);//最高优先级10
-        max.setPriority(Thread.MIN_PRIORITY);//最低优先级1
+        min.setPriority(Thread.MIN_PRIORITY);//最高优先级1
+        max.setPriority(Thread.MAX_PRIORITY);//最低优先级10
         //norm优先级为默认值5
         min.start();
         norm.start();
