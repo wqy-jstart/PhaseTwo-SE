@@ -29,7 +29,8 @@ public class ThreadPoolDemo {
                     System.out.println(t.getName()+":执行一个任务完毕!");
                 }
             };
-            threadPool.execute(runnable);//execute()该方法返回值为void,传入一个线程任务
+            //execute()该方法返回值为void,传入一个线程任务,让线程池来执行任务
+            threadPool.execute(runnable);
             //这种情况下线程任务结束后,进程并不停止
             System.out.println("将一个任务交给了线程池");
         }
