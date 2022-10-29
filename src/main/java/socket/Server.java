@@ -114,12 +114,11 @@ public class Server {
                         System.out.println(host + "说：" + message);
                         //将消息回复给客户端
                         synchronized (allOut){
-                        for (PrintWriter o : allOut) {
-                            o.println(host + "说：" + message);
-                        }
+                            for (PrintWriter o : allOut) {
+                                o.println(host + "说：" + message);
+                            }
                         }
                     }
-
             } catch (IOException e) {
 //                e.printStackTrace();//输出错误堆栈信息,便于定位问题出现的位置和原因
                 System.out.println("有一个客户端异常断开了！！！");
