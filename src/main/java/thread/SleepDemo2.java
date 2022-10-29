@@ -5,6 +5,8 @@ package thread;
  * 当一个线程调用sleep方法处于睡眠阻塞的过程中如果此时该线程的interrupt方法被调用，那么
  * 此时该线程的睡眠阻塞状态会被中断，sleep方法就会抛出中断异常
  */
+
+
 public class SleepDemo2 {
     public static void main(String[] args) {
         //建立完对象后处于新建状态,直到启动start()方法
