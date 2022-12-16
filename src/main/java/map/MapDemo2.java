@@ -83,5 +83,8 @@ public class MapDemo2 {
         map.forEach(
                 (k,v)-> System.out.println(k+":"+v)
         );
+
+        // ::写法
+        c.forEach(System.out::println);
     }
 }
