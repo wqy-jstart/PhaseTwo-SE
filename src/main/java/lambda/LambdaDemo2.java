@@ -22,7 +22,7 @@ public class LambdaDemo2 {
 //        });
          Collections.sort(list,(o1,o2)->o2-o1);
          System.out.println(list);
-         list.sort((o1,o2)->o2-o1);
+         list.sort((o1,o2)->o2-o1); // 原本参数列表是一个Comparator比较器，这里使用lambda表达式代替比较器，前者参数列表，后者返回值
         System.out.println(list);
     }
 }
