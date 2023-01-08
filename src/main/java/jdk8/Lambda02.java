@@ -36,7 +36,7 @@ class Java8Tester {
         // lambda 表达式的局部变量可以不用声明为 final，但是必须不可被后面的代码修改（即隐性的具有 final 的语义）
         int num1 = 5;
         Converter<Integer,String> s1 = (param) -> System.out.println((param + num1));
-
+        s1.convert(5);
         // num1 = 6;// Local variable num defined in an enclosing scope must be final or effectively
 
     }
