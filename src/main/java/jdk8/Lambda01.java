@@ -8,7 +8,7 @@ package jdk8;
  * @since 2023.1.5
  */
 public class Lambda01 {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Lambda01 tester = new Lambda01();
 
         // 接口中方法的定义方式
